@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table border="1">
+    <tr>
+        <th>材料</td>
+        <th>個数</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ i[3] }}</td>
+        <td>{{ i[4] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-right">
+        <div class="col-md-10 col-lg-8 col-xl-7" style="text-align:right">
+            <div class="post-preview">
+
+                <form action="/end" method="post">
+                    <input type="hidden" name="data" value="{{ data }}">
+                    <button type="submit" name="buuton">PDFダウンロード</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<table border="1">
+    <tr>
+        <th>名称</td>
+        <th>厚さ(mm)</th>
+        <th>幅(mm)</th>
+        <th>長さ(mm)</th>
+        <th>個数</th>
+    </tr>
+    {% for i in data2 %}
+    <tr>
+        <td>{{ i.name }}</td>
+        <td>{{ i.thickness }}</td>
+        <td>{{ i.width }}</td>
+        <td>{{ i.length }}</td>
+        <td>{{ i.quantity }}</td>
+    </tr>
+    {% endfor %}
+</table> -->
+{% endblock %}

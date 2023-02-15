@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="mb-4">
+    <div class="container px-4 px-lg-7">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h3>素材登録</h3>
+                <div>
+                    <form action="/register" method="post" enctype="multipart/form-data">
+                        <div>
+                            <label for="material">材料</label>
+                            <select name="material" id="material" onchange="viewChange();">
+                                <option value="#">選択せよ</option>
+                                <option value="1">板材 300mm*140mm*20mm</option>
+                                <option value="2">板材 450mm*40mm*25mm</option>
+                                <option value="3">板材 600mm*200mm*13mm</option>
+                                <option value="4">板材 600mm*250mm*20mm</option>
+                                <option value="5">板材 910mm*85mm*12mm</option>
+                                <option value="6">板材 910mm*200mm*18mm</option>
+                                <option value="7">板材 910mm*300mm*18mm</option>
+                                <option value="8">板材 1820mm*400mm*30mm</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div><label for="quantity">個数</label><input type="number" name="quantity" size="3"
+                                placeholder="数量">
+                        </div>
+                        <div style="margin-top: 2rem"><button type="submit">登録</button></div>
+                    </form>
+                    <hr>
+                    <button>
+                        <a href="/">終わる</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+</main>
+{% endblock %}
+
+
+<!--
+    <main class="mb-4">
+    <div class="container px-4 px-lg-7">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <h3>素材登録</h3>
+                <div>
+                    <form action="/register" method="post" enctype="multipart/form-data">
+                        <div>
+                            <label for="materialid">種類</label>
+                            <select name="materialid" id="material" onchange="viewChange();">
+                                <option value="#">[種類]</option>
+                                <option value=100>木材</option>
+                                <option value=200>部品</option>
+                                <option value="300">その他</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div>
+                            <label for="name">名称</label>
+                            <input type="text" name="name" placeholder="素材の名称を入力してください" size="30">
+                        </div>
+                        <hr>
+                        <div>
+                            <label for="thickness">厚み</label>
+                            <input type="number" name="thickness" size="3" placeholder="厚み(mm)">
+                        </div>
+                        <hr>
+                        <div><label for="width">幅</label>
+                            <input type="number" name="width" size="3" placeholder="幅(mm)">
+                        </div>
+                        <hr>
+                        <div><label for="length">長さ</label>
+                            <input type="number" name="length" size="3" placeholder="長さ(mm)">
+                        </div>
+                        <hr>
+                        <div><label for="quantity">個数</label><input type="number" name="quantity" size="3"
+                                placeholder="数量">
+                        </div>
+                        <div style="margin-top: 2rem"><button type="submit">登録</button></div>
+                    </form>
+                    <hr>
+                    <button>
+                        <a href="/">終わる</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+</main>
+
+-->

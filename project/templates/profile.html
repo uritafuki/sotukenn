@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Ahoy!{{ name }}!
+</h1>
+
+
+<table border="1">
+    <tr>
+        <th>名称</td>
+        <th>個数</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ i.material }}</td>
+        <td>{{ i.quantity }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

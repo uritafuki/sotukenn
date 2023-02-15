@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7" style="font-size:15px">
+          <!-- Post preview-->
+          <div>
+            <a href="{{ url_for('auth.register') }}">
+                  <button>
+                      所持材料登録 <!--&raquo; -->
+                      <i class="arrow"></i>
+                  </button>
+              </a>
+              <!-- <a href="register" class="btn">
+                  <h2>所持材料登録 &raquo;</h2>
+                  <i class="arrow"></i>
+              </a> -->
+              <p>こちらでは貴方がDIYで必要な材料を登録することができます。</p>
+              <!-- <img src="{{ url_for('static', filename='image/mokuzai.jpg') }}"> -->
+          </div>
+          <!-- Divider-->
+          <hr class="my-4" />
+          <!-- Post preview-->
+          <div class="post-preview">
+              <a href="{{ url_for('auth.create') }}">
+                  <button>
+                      製作物選択 <!--&raquo;-->
+                      <i class="arrow"></i>
+                  </button>
+              </a>
+              <!-- <a href="create" class="btn">
+                  <h2>製作物選択 &raquo;</h2>
+                  <i class="arrow"></i>
+              </a> -->
+              <p>こちらでは貴方が製作したいものを選択することができます。</p>
+              <!-- <img src="{{ url_for('static', filename='image/isu.jpg') }}"> -->
+          </div>
+          <!-- Divider-->
+          <hr class="my-4" />
+          <!-- Post preview-->
+          <div class="post-preview">
+              <a href="{{ url_for('auth.process') }}">
+                  <button>
+                      製作物工程確認 <!--&raquo;-->
+                      <i class="arrow"></i>
+                  </button>
+              </a>
+              <!-- <a href="#" class="btn">
+                  <h2>製作物工程確認 &raquo;</h2>
+                  <i class="arrow"></i>
+              </a> -->
+              <p>こちらでは貴方が選択した製作物の作り方が確認できます。</p>
+              <!-- <img src="{{ url_for('static', filename='image/sekei.jpg') }}"> -->
+          </div>
+      </div>
+  </div>
+</div>
+{% endif %}
+{% if not current_user.is_authenticated %}
+<h1 class="title">
+  DIY支援システム
+</h1>
+<h2 class="subtitle">
+  所持している材料を登録したり、制作物に必要な材料の不足分を確認できたりします
+</h2>
+{% endif %}
+{% endblock %}
+
+

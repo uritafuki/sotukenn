@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7" style="font-size: 20px">
+                <h3>{{ product.name }}が選択されました。</h3>
+                <h5>{{ product.name }}の不足材料を検査します。</h5>
+            </div>
+        </div>
+        
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-right">
+                <div class="col-md-10 col-lg-8 col-xl-7" style="text-align:right">
+                    <div class="post-preview">
+                        <form action="/check" method="post">
+                            <input type="hidden" name="product" value="{{ product.id }}">
+                            <button type="submit" name="buuton">調査</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

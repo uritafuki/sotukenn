@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <form action="/create" method="post" enctype="multipart/form-data">
+                    <ul style="display: flex; list-style: none;">
+                        <li style="margin-right: 1rem">
+                            <input type="radio" name="radio" id="1" value="1" required>
+                            <label class="checkbox_horizon" for="1">子供用椅子</label>
+                        </li>
+                        <li style="margin-right: 1rem"> 
+                            <input type="radio" name="radio" id="2" value="2" required>
+                            <label class="checkbox_horizon" for="2">テーブル</label>
+                        </li>
+                        <li style="margin-right: 1rem">
+                            <input type="radio" name="radio" id="3" value="3" required>
+                            <label class="checkbox_horizon" for="3">サイドテーブル</label>
+                        </li>
+                    </ul>
+                    <div style="margin-top: 2rem"><button type="submit">登録</button></div>
+                </form>
+{% endblock %}
